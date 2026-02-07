@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e73ae3b6ccd51b4e8d65398b1f8d3ca, type: 3}
+  m_Name: Diallogue1ChangedSubject
+  m_EditorClassIdentifier: Assembly-CSharp::Jam.Talking.Talk
+  speechList:
+  - entity: 1
+    speechText: Now we are talking here
+    buttons: []
+  - entity: 0
+    speechText: That's great! What do we do now?
+    buttons: []
+  - entity: 1
+    speechText: Let's go to the previous subject
+    buttons:
+    - leadTalk: {fileID: 11400000, guid: 1e158e312a0c36e4f961719b70120571, type: 2}
+      wantedIndex: 5
+      buttonText: OK
