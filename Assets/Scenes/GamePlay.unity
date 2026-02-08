@@ -9213,6 +9213,52 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1398542185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1398542187}
+  - component: {fileID: 1398542186}
+  m_Layer: 0
+  m_Name: BulletPool (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1398542186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398542185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a63b74d66654574698bac2a21d565fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Jam.DodgeGame.BulletPool
+  _bulletPrefab: {fileID: 858742247263107389, guid: 5a830b3f35f1e3a4abf1540521357175, type: 3}
+  _initialSize: 100
+--- !u!4 &1398542187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398542185}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -17.83171, y: 10.82425, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1443300095
 GameObject:
   m_ObjectHideFlags: 0
@@ -11396,6 +11442,59 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &1867869546
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1867869548}
+  - component: {fileID: 1867869547}
+  m_Layer: 0
+  m_Name: LinearBurstAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1867869547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867869546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36334f92f59ffed4b97158e1e4b4cccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Jam.DodgeGame.LinearBurstAttack
+  _cooldown: 2
+  _bulletPool: {fileID: 1398542186}
+  _firePoint: {fileID: 1918114637}
+  _burstsCount: 3
+  _bulletsPerBurst: 3
+  _timeBetweenBullets: 0.1
+  _timeBetweenBursts: 0.4
+  _baseSpeed: 6
+  _baseDamage: 1
+--- !u!4 &1867869548
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867869546}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1918114637}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1878881404
 GameObject:
   m_ObjectHideFlags: 0
@@ -11610,6 +11709,7 @@ Transform:
   - {fileID: 1443300096}
   - {fileID: 1741947730}
   - {fileID: 1698896648}
+  - {fileID: 1867869548}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1918114638
@@ -11686,12 +11786,14 @@ MonoBehaviour:
   _targetTransform: {fileID: 1117091084}
   _difficulty: 3
   _attacksfirst:
-  - {fileID: 1741947731}
+  - {fileID: 1867869547}
   _attacksSecond:
   - {fileID: 1741947731}
+  - {fileID: 1867869547}
   _attacksThird:
   - {fileID: 1741947731}
   - {fileID: 1698896649}
+  - {fileID: 1867869547}
   OnSecond:
     m_PersistentCalls:
       m_Calls:
@@ -12652,6 +12754,7 @@ SceneRoots:
   - {fileID: 1739245365}
   - {fileID: 1918114637}
   - {fileID: 245361838}
+  - {fileID: 1398542187}
   - {fileID: 1145066569}
   - {fileID: 1544152977}
   - {fileID: 149831137}
