@@ -5,13 +5,13 @@ using System;
 namespace Jam.Talking
 {
     [Serializable]
-    public enum TalkingEntites { Player, Poseydon, Girlfriend, Event}
+    public enum TalkingEntites { Player, Poseydon, Girlfriend, GFPhone, Event}
 
     [Serializable]
     public struct ButtonChoice
     {
+        public int choiceAttitude;
         public Talk leadTalk;
-        public int wantedIndex;
         public string buttonText;
     }
 
@@ -20,6 +20,7 @@ namespace Jam.Talking
     {
         public TalkingEntites entity;
         public string speechText;
+        public int wantedIndex;
         public List<ButtonChoice> buttons;
     }
 

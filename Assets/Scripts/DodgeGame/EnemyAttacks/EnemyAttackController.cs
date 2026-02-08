@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using Zenject;
 
 namespace Jam.DodgeGame
@@ -7,7 +8,10 @@ namespace Jam.DodgeGame
     {
         [SerializeField] private Transform _targetTransform;
         [SerializeField, Range(1, 5)] private int _difficulty = 1;
-        [SerializeField] private EnemyAttackBase[] _attacks;
+        [SerializeField] private EnemyAttackBase[] _attacksfirst;
+        [SerializeField] private EnemyAttackBase[] _attacksSecond;
+        [SerializeField] private EnemyAttackBase[] _attacksThird;
+        [SerializeField] private UnityEvent OnSecond;
 
         private GameManager gameManager;
 
@@ -35,6 +39,28 @@ namespace Jam.DodgeGame
 
         private void TryUseRandomAttack()
         {
+            EnemyAttackBase[] _attacks;
+
+            if (gameManager.GamePlayTime == 1)
+            {
+                _attacks = _attacksfirst;
+            }
+            else if (gameManager.GamePlayTime == 2)
+            {
+                _attacks = _attacksSecond;
+            }
+            else if(gameManager.GamePlayTime == 3)
+            {
+                _attacks = _attacksThird;
+            }
+            else
+            {
+                Debug.Log("Error");
+                _attacks = _attacksfirst;
+            }
+            
+
+
             if (_attacks.Length == 0)
                 return;
 

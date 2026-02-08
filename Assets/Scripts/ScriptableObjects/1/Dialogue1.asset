@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e73ae3b6ccd51b4e8d65398b1f8d3ca, type: 3}
+  m_Name: Dialogue1
+  m_EditorClassIdentifier: Assembly-CSharp::Jam.Talking.Talk
+  speechList:
+  - entity: 1
+    speechText: You must be the nefor my little girl has been talking about, is that
+      right?
+    wantedIndex: 0
+    buttons: []
+  - entity: 0
+    speechText: ...
+    wantedIndex: 0
+    buttons:
+    - choiceAttitude: -1
+      leadTalk: {fileID: 0}
+      buttonText: Hello, y-yes, n-nice to meet you.
+    - choiceAttitude: -3
+      leadTalk: {fileID: 11400000, guid: 88c5ba17c4ac6364d85080ce18be90a8, type: 2}
+      buttonText: Well, yeah, and you're the dude who summons a tsunami with every
+        fart, right?
+    - choiceAttitude: 2
+      leadTalk: {fileID: 0}
+      buttonText: Yes, my name is Artyom, it's a pleasure to meet you.
+  - entity: 1
+    speechText: ' I have just one simple task for you to win my daughter. You just
+      have to survive.'
+    wantedIndex: 0
+    buttons: []
+  - entity: 0
+    speechText: WHAT?!
+    wantedIndex: 0
+    buttons: []
+  - entity: 1
+    speechText: You will face three trials. In each one, you just need to last for
+      a single minute.
+    wantedIndex: 0
+    buttons: []
+  - entity: 1
+    speechText: I belive everything is clear... Artyom?
+    wantedIndex: 0
+    buttons: []
+  - entity: 2
+    speechText: Don't be scared, you can do it!
+    wantedIndex: 0
+    buttons: []
+  - entity: 2
+    speechText: Here, a little gift from me. (A shield)
+    wantedIndex: 0
+    buttons: []
+  - entity: 0
+    speechText: B-b-bb-but
+    wantedIndex: 0
+    buttons: []

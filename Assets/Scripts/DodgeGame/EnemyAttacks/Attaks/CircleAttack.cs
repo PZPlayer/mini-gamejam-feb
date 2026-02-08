@@ -18,6 +18,11 @@ namespace Jam.DodgeGame
             StartCoroutine(AttackCoroutine(targetPosition, difficulty));
         }
 
+        public void ChangeCooldown(float newCD)
+        {
+            _cooldown = newCD;
+        }
+
         private IEnumerator AttackCoroutine(Vector2 center, int difficulty)
         {
             // 1. Случайный радиус

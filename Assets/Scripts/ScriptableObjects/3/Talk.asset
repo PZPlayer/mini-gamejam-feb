@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e73ae3b6ccd51b4e8d65398b1f8d3ca, type: 3}
+  m_Name: Talk
+  m_EditorClassIdentifier: Assembly-CSharp::Jam.Talking.Talk
+  speechList:
+  - entity: 1
+    speechText: Wow, honestly, I wasn't expecting that.
+    wantedIndex: 0
+    buttons: []
+  - entity: 0
+    speechText: ...
+    wantedIndex: 0
+    buttons:
+    - choiceAttitude: 1
+      leadTalk: {fileID: 11400000, guid: 97303e1c43c44724ba0235f327fea74a, type: 2}
+      buttonText: Like spitting
+    - choiceAttitude: 0
+      leadTalk: {fileID: 0}
+      buttonText: I expected it to be harder.
+    - choiceAttitude: 2
+      leadTalk: {fileID: 11400000, guid: d3c4cee511236624e91e537e986745a0, type: 2}
+      buttonText: I passed, let's get to the third one.
+  - entity: 1
+    speechText: Servants, do your worst!
+    wantedIndex: 0
+    buttons: []
+  - entity: 3
+    speechText: I've heard the third arena is going to be very difficult.
+    wantedIndex: 0
+    buttons: []
+  - entity: 3
+    speechText: Try to butter him up.
+    wantedIndex: 0
+    buttons: []
+  - entity: 3
+    speechText: Tell him you're studying at university.
+    wantedIndex: 0
+    buttons: []
+  - entity: 0
+    speechText: Sir...
+    wantedIndex: 0
+    buttons:
+    - choiceAttitude: -2
+      leadTalk: {fileID: 11400000, guid: c6642d2d2dd3c914d8155c0a5c5b180f, type: 2}
+      buttonText: I study at the University
+    - choiceAttitude: -3
+      leadTalk: {fileID: 11400000, guid: c6642d2d2dd3c914d8155c0a5c5b180f, type: 2}
+      buttonText: I'm a scientist, from some university or other.
+    - choiceAttitude: 1
+      leadTalk: {fileID: 11400000, guid: f528a18d5e78cf344bbf7ab90855973e, type: 2}
+      buttonText: I was...... expelled.
+  - entity: 3
+    speechText: Sooooooooo...
+    wantedIndex: 0
+    buttons: []
+  - entity: 3
+    speechText: Well, say something nice to a man who's about a thousand years old.
+    wantedIndex: 0
+    buttons: []
+  - entity: 0
+    speechText: Hey...
+    wantedIndex: 0
+    buttons:
+    - choiceAttitude: -4
+      leadTalk: {fileID: 11400000, guid: 38db300b2a3726147afaaf83b0d8ff6e, type: 2}
+      buttonText: I like 'em old
+    - choiceAttitude: 2
+      leadTalk: {fileID: 11400000, guid: 24708d91150e34445a59dadb9729f9df, type: 2}
+      buttonText: Did you see Cristoforo Colombo?
+    - choiceAttitude: -1
+      leadTalk: {fileID: 11400000, guid: 7432bebcab91f04428ed4c6e9fbeb4cc, type: 2}
+      buttonText: I like Megalodons.
+    - choiceAttitude: 1
+      leadTalk: {fileID: 11400000, guid: 560346b0c9442bb44807b2f5c80ade95, type: 2}
+      buttonText: I hate eels.
+  - entity: 1
+    speechText: It is time for the final stage.
+    wantedIndex: 0
+    buttons: []

@@ -10,18 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e73ae3b6ccd51b4e8d65398b1f8d3ca, type: 3}
-  m_Name: Diallogue1ChangedSubject
+  m_Name: Dialogue2 1
   m_EditorClassIdentifier: Assembly-CSharp::Jam.Talking.Talk
   speechList:
   - entity: 1
-    speechText: Now we are talking here
+    speechText: Oh, really? Let's see what you have to say next.
+    wantedIndex: 2
     buttons: []
-  - entity: 0
-    speechText: That's great! What do we do now?
-    buttons: []
-  - entity: 1
-    speechText: Let's go to the previous subject
-    buttons:
-    - leadTalk: {fileID: 11400000, guid: 1e158e312a0c36e4f961719b70120571, type: 2}
-      wantedIndex: 5
-      buttonText: OK

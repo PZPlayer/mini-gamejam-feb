@@ -6,6 +6,7 @@ namespace Jam
     {
         public int CurrentDialogue;
         public int PoseidonLikeRate;
+        public int GamePlayTime;
 
         public void TestIfWorks() => Debug.Log("Zenject Works");
     }

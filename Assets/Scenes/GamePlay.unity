@@ -652,6 +652,69 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &149831135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 149831137}
+  - component: {fileID: 149831136}
+  m_Layer: 0
+  m_Name: SceneContext
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &149831136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149831135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89715ad69b973a14899afa2c6730b30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Zenject::Zenject.SceneContext
+  _scriptableObjectInstallers: []
+  _monoInstallers: []
+  _installerPrefabs: []
+  _autoRun: 1
+  OnPreInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPreResolve:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostResolve:
+    m_PersistentCalls:
+      m_Calls: []
+  _parentNewObjectsUnderSceneContext: 0
+  _contractNames: []
+  _parentContractNames: []
+--- !u!4 &149831137
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149831135}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &150983762
 GameObject:
   m_ObjectHideFlags: 0
@@ -6745,6 +6808,7 @@ GameObject:
   - component: {fileID: 1117091086}
   - component: {fileID: 1117091081}
   - component: {fileID: 1117091087}
+  - component: {fileID: 1117091088}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -7084,7 +7148,19 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 0}
   OnDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1117091088}
+        m_TargetAssemblyTypeName: Jam.UI.SceneChanger, Assembly-CSharp
+        m_MethodName: TravelToScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls:
@@ -7100,6 +7176,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1117091088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117091079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483913e3190c67b4e8d9c2a3e01d9e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Jam.UI.SceneChanger
+  _transition: {fileID: 6394682554048130445, guid: 8b61731846af13847a661d2fa5db63b8, type: 3}
+  _canvas: {fileID: 617043957}
 --- !u!1 &1139146679
 GameObject:
   m_ObjectHideFlags: 0
@@ -8592,6 +8682,7 @@ GameObject:
   - component: {fileID: 1343351185}
   - component: {fileID: 1343351184}
   - component: {fileID: 1343351183}
+  - component: {fileID: 1343351186}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -8634,7 +8725,31 @@ MonoBehaviour:
   _timerText: {fileID: 1343351184}
   OnTimerEnd:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1343351186}
+        m_TargetAssemblyTypeName: Jam.Talking.OtherScenesRemoveController, Assembly-CSharp
+        m_MethodName: AddToDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1117091088}
+        m_TargetAssemblyTypeName: Jam.UI.SceneChanger, Assembly-CSharp
+        m_MethodName: TravelToScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1343351184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8735,6 +8850,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343351181}
   m_CullTransparentMesh: 1
+--- !u!114 &1343351186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343351181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef9a356d00cfabc46a089129a9affb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Jam.Talking.OtherScenesRemoveController
 --- !u!1 &1350024866
 GameObject:
   m_ObjectHideFlags: 0
@@ -10464,9 +10591,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b487e49d5b25eb24f966c7d24c1f9ec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Jam.DodgeGame.TriangleAttack
-  _cooldown: 2
+  _cooldown: 5
   _bulletPool: {fileID: 1145066568}
-  _count: 6
+  _count: 3
   _minRadius: 5
   _maxRadius: 7
   _spawnDelay: 0.2
@@ -10806,7 +10933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb914959301930f43b74201f57534384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Jam.DodgeGame.CircleAttack
-  _cooldown: 2
+  _cooldown: 4
   _bulletPool: {fileID: 245361837}
   _bulletCount: 8
   _minRadius: 5
@@ -11475,7 +11602,7 @@ Transform:
   m_GameObject: {fileID: 1918114635}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.12, y: 16.64, z: 0}
+  m_LocalPosition: {x: 0.12, y: 25.98, z: 0}
   m_LocalScale: {x: 0.46967, y: 0.46967, z: 0.46967}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11558,9 +11685,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Jam.DodgeGame.EnemyAttackController
   _targetTransform: {fileID: 1117091084}
   _difficulty: 3
-  _attacks:
-  - {fileID: 1698896649}
+  _attacksfirst:
   - {fileID: 1741947731}
+  _attacksSecond:
+  - {fileID: 1741947731}
+  _attacksThird:
+  - {fileID: 1741947731}
+  - {fileID: 1698896649}
+  OnSecond:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1741947731}
+        m_TargetAssemblyTypeName: Jam.DodgeGame.CircleAttack, Assembly-CSharp
+        m_MethodName: ChangeCooldown
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 2
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1936771605
 GameObject:
   m_ObjectHideFlags: 0
@@ -12508,3 +12654,4 @@ SceneRoots:
   - {fileID: 245361838}
   - {fileID: 1145066569}
   - {fileID: 1544152977}
+  - {fileID: 149831137}
