@@ -31,7 +31,7 @@ namespace Jam.Talking
         [SerializeField] private string curWord;
         [SerializeField] private int talkIndex = 0;
         [SerializeField] private int dialogueIndex = 0;
-        [SerializeField]private GameManager gameManager;
+        [SerializeField] private GameManager gameManager;
 
         private void Start()
         {
@@ -55,9 +55,10 @@ namespace Jam.Talking
 
         public void ChangeDialogue(ButtonChoice butn)
         {
-            talkIndex = Mathf.Max(butn.wantedIndex - 1, -1);
+            talkIndex = Mathf.Max(butn.wantedIndex, 0);
             currentDialogue = new TalkEvents();
             currentDialogue.talk = butn.leadTalk;
+
             isTyping = false;
             ClearButtons();
         }
@@ -70,7 +71,6 @@ namespace Jam.Talking
             }
 
             isInteractive = false;
-            talkIndex++;
             MoveForward();
             _nextButton.SetActive(true);
         }
@@ -89,19 +89,9 @@ namespace Jam.Talking
         {
             if (currentDialogue.talk.speechList.Count <= talkIndex)
             {
-                try
-                {
-                    talkIndex = 0;
-                    dialogueIndex++;
-                    currentDialogue = _talks[dialogueIndex];
-                    currentDialogue.OnStart.Invoke();
-                }
-                catch
-                {
-                    currentDialogue.OnEnd?.Invoke();
-                    Debug.Log("NO MORE DIALOGUES");
-                    return;
-                }
+                _talks[dialogueIndex].OnEnd?.Invoke();
+                Debug.Log("NO MORE DIALOGUES");
+                return;
             }
 
             if (currentDialogue.talk.speechList[talkIndex].buttons.Count != 0)
@@ -157,8 +147,8 @@ namespace Jam.Talking
                 }
             }
 
-            if (myWord == curWord) { _talkingText.text = text; curWord = ""; }
-            if (!isInteractive) talkIndex++;
+            if (myWord == curWord) { _talkingText.text = text; curWord = ""; talkIndex++; }
+            
             isTyping = false;
         }
     }
