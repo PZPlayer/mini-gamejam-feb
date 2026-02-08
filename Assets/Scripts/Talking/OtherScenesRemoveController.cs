@@ -16,6 +16,7 @@ namespace Jam.Talking
         public void AddToDialogue()
         {
             gameManager.CurrentDialogue += 1;
+            print(transform.name + " HAve added dialogue");
         }
     }
 }

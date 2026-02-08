@@ -13,6 +13,7 @@ public class TrialTimer : MonoBehaviour
 
     private float _timeLeft;
     private bool _isRunning;
+    private float _timeRight;
 
     private void Start()
     {
