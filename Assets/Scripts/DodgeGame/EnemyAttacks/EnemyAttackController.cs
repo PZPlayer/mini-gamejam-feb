@@ -1,4 +1,5 @@
 using UnityEngine;
+using Zenject;
 
 namespace Jam.DodgeGame
 {
@@ -7,6 +8,19 @@ namespace Jam.DodgeGame
         [SerializeField] private Transform _targetTransform;
         [SerializeField, Range(1, 5)] private int _difficulty = 1;
         [SerializeField] private EnemyAttackBase[] _attacks;
+
+        private GameManager gameManager;
+
+        [Inject]
+        public void GetGameManager(GameManager mangaer)
+        {
+            gameManager = mangaer;
+        }
+
+        private void Start()
+        {
+            _difficulty = Mathf.Clamp(Mathf.Abs(gameManager.PoseidonLikeRate - 3), 1, 5);
+        }
 
         public int Difficulty
         {
